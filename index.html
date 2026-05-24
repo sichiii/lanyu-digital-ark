@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>海浪上的記憶——達悟族傳統文化數位方舟</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<!-- TOP NOTICE -->
+<div id="topNotice">
+  <span class="notice-icon">⚑</span>
+  本網頁為教育用途數位典藏報告，達悟族傳統文化知識版權屬於達悟族人民所有。
+  <button onclick="document.getElementById('topNotice').style.display='none'" aria-label="關閉提示">✕</button>
+</div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-logo">海浪上的記憶</div>
+  <ul class="nav-links">
+    <li><a href="#story">典藏緣起</a></li>
+    <li><a href="#map">地圖導覽</a></li>
+    <li><a href="#cards">展品</a></li>
+    <li><a href="#risk">傳承危機</a></li>
+    <li><a href="#footer">授權</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <canvas id="waveCanvas"></canvas>
+
+  <div class="hero-panel">
+    <p class="hero-eyebrow">Ponso no Tao · 人之島</p>
+    <h1 class="hero-title">
+      海浪上的記憶<br>
+      <em>達悟族傳統文化數位方舟</em>
+    </h1>
+    <p class="hero-subtitle">拼板舟・飛魚季・芋頭・地下屋・傳統禮裝</p>
+    <div class="hero-tags">
+      <span class="hero-tag">蘭嶼 Orchid Island</span>
+      <span class="hero-tag">傳統生態知識 TEK</span>
+      <span class="hero-tag">Dublin Core Metadata</span>
+      <span class="hero-tag">數位典藏</span>
+    </div>
+    <a href="#story" class="hero-cta">進入展覽 &darr;</a>
+  </div>
+
+  <div class="hero-wave-deco"><span></span></div>
+</header>
+
+<!-- STORY -->
+<div class="story-section" id="story">
+  <div class="story-inner">
+    <div class="story-deco" aria-hidden="true">海</div>
+    <p class="story-label">典藏緣起 · Archive</p>
+    <p class="story-text">
+      <strong>達悟族的生活是一本沒有文字的百科</strong>，知識活在手上、口中，和海浪的節奏裡。
+      每一艘拼板舟都是一份天文曆法，每一次飛魚季都是一場對自然的謙遜儀式。
+    </p>
+    <p class="story-text">
+      然而，這些知識正在加速消逝。傳統匠師的老齡化、年輕一代的離島求學與就業、
+      以及全球氣候變遷帶來的環境壓力，讓這份文明遺產每一天都更加脆弱。
+    </p>
+    <p class="story-sub">
+      這份數位典藏嘗試把這本書的一頁翻成數位語言——以傳承危機的緊迫程度作為典藏優先等級，
+      記錄五項核心文化實踐的知識結構、語境脈絡，與存續的可能。<br><br>
+      典藏項目採用 Dublin Core Metadata 格式，並附以傳統生態知識（TEK）關聯標記。
+      所有資料在社群知情同意原則下取得，部分敏感知識遵照達悟族文化協議予以限制存取。
+    </p>
+    <p class="story-emphasis">
+      這五件展品的典藏優先等級，是根據傳承危機的緊迫程度評估的，而不是依照展品的視覺吸引力排序——<strong>這是數位典藏與一般展覽最根本的差異。</strong>
+    </p>
+  </div>
+</div>
+
+<!-- MAP SECTION -->
+<div class="map-section" id="map">
+  <div class="section-inner">
+    <p class="section-label">Map</p>
+    <h2 class="section-title" style="color:var(--text-dark);">展品地圖導覽</h2>
+    <p style="font-size:0.8rem;color:var(--text-light);margin-top:0.3rem;letter-spacing:0.04em;">點擊地點標記可跳出展品卡片摘要與 Metadata</p>
+
+    <div class="map-container">
+      <div class="map-island">
+        <div class="island-center">
+          <div class="island-name">蘭嶼島</div>
+          <div class="island-coords">N 22°03' · E 121°32'</div>
+        </div>
+
+        <!-- Marker 1: tatala -->
+        <div class="map-marker marker-tatala" onclick="showMapCard(1, event)">
+          <div class="marker-dot" style="background:var(--ocean-mid);">船</div>
+          <div class="marker-label">拼板舟</div>
+        </div>
+
+        <!-- Marker 2: alibangbang -->
+        <div class="map-marker marker-alibangbang" onclick="showMapCard(2, event)">
+          <div class="marker-label">飛魚季</div>
+          <div class="marker-dot" style="background:var(--coral);">魚</div>
+        </div>
+
+        <!-- Marker 3: soli -->
+        <div class="map-marker marker-soli" onclick="showMapCard(3, event)">
+          <div class="marker-dot" style="background:var(--crisis-mid);">芋</div>
+          <div class="marker-label">芋頭田</div>
+        </div>
+
+        <!-- Marker 4: vahay -->
+        <div class="map-marker marker-vahay" onclick="showMapCard(4, event)">
+          <div class="marker-dot" style="background:#7c5227;">屋</div>
+          <div class="marker-label">地下屋</div>
+        </div>
+
+        <!-- Marker 5: walis/nagol -->
+        <div class="map-marker marker-walis" onclick="showMapCard(5, event)">
+          <div class="marker-dot" style="background:#5d4fa1;">儀</div>
+          <div class="marker-label">傳統禮裝</div>
+        </div>
+      </div>
+
+      <!-- Map Card Popup -->
+      <div id="mapPopup" class="map-popup">
+        <div class="popup-content">
+          <div class="popup-title" id="popupTitle">展品名稱</div>
+          <div class="popup-tao" id="popupTao">達悟語名稱</div>
+          <div class="popup-id" id="popupId">DC 編號</div>
+          <button class="popup-link" onclick="scrollToCurrentCard()">查看詳細資訊 →</button>
+        </div>
+        <div class="popup-arrow"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CARDS -->
+<div class="cards-section" id="cards">
+  <div class="section-inner">
+    <p class="section-label">展品選件</p>
+    <h2 class="section-title">五件核心文化典藏</h2>
+    <p style="font-size:0.8rem;color:var(--stone);margin-top:0.3rem;letter-spacing:0.04em;">點擊各展品卡片可展開 DC Metadata 詳情與達悟語知識說明</p>
+
+    <div class="cards-grid" id="cardsGrid">
+
+      <!-- Card 1: tatala -->
+      <div class="card" data-id="1" onclick="toggleCard(this)">
+        <div class="card-img">
+          <img src="Img/拼板舟.png" alt="拼板舟">
+        </div>
+        <div class="card-band" style="background:var(--crisis-urgent);"></div>
+        <div class="card-body">
+          <div class="card-name">拼板舟<span class="card-tao">（tatala）</span></div>
+          <div class="card-meta">海洋器物</div>
+          <div class="card-identifier">dc:identifier &nbsp;NUTC-IM-2026-001</div>
+          <span class="card-crisis-badge" style="background:rgba(192,57,43,0.18);color:#ff8a7e;">
+            ● 傳承危機：緊急
+          </span>
+        </div>
+        <button class="card-toggle" aria-label="展開詳情">展開詳情 ▾</button>
+        <div class="card-detail">
+          <div class="card-detail-inner">
+            <div class="detail-row">
+              <div class="detail-key">dc:title</div>
+              <div class="detail-val">拼板舟建造知識體系（tatala-araw）</div>
+            </div>
+            <div class="detail-row">
+              <div class="detail-key">dc:description</div>
+              <div class="detail-val">以 21 至 27 塊不同樹種的木板拼接而成，全程<strong>不使用任何釘子</strong>，僅靠木栓、藤條與精密榫接固定船體。每塊木板皆有達悟語專名，對應船體部位的結構功能與力學邏輯。建造過程融合星象曆法、海流判讀與季風知識，是家族男性協作完成的集體知識實踐，亦是傳承造海知識的核心儀式場域。</div>
+            </div>
+            <div class="detail-divider"></div>
+            <div class="detail-row">
+              <div class="detail-key">TEK 關聯</div>
+              <div class="detail-val">海洋生態曆法、木材識別與選材禁忌、星象導航、造船禁忌（manibon）</div>
+            </div>
+            <div class="detail-row">
+              <div class="detail-key">dc:rights</div>
+              <div class="detail-val">CC BY-NC-SA 4.0 · 部分建造細節依社群協議限制存取</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: alibangbang -->
+      <div class="card" data-id="2" onclick="toggleCard(this)">
+        <div class="card-img">
+          <img src="Img/飛魚季儀式.png" alt="飛魚季儀式">
+        </div>
+        <div class="card-band" style="background:var(--crisis-high);"></div>
+        <div class="card-body">
+          <div class="card-name">飛魚季儀式<span class="card-tao">（alibangbang）</span></div>
+          <div class="card-meta">歲時祭儀</div>
+          <div class="card-identifier">dc:identifier &nbsp;NUTC-IM-2026-002</div>
+          <span class="card-crisis-badge" style="background:rgba(232,115,74,0.18);color:#f2b08a;">
+            ● 傳承危機：高
+          </span>
+        </div>
+        <button class="card-toggle">展開詳情 ▾</button>
+        <div class="card-detail">
+          <div class="card-detail-inner">
+            <div class="detail-row">
+              <div class="detail-key">dc:title</div>
+              <div class="detail-val">飛魚季祭儀知識體系（alibangbang-anito）</div>
+            </div>
+            <div class="detail-row">
+              <div class="detail-key">dc:description</div>
+              <div class="detail-val">從每年二月的招魚祭（mivaci no rayon）起至八月終魚祭，飛魚季期間有一套<strong>嚴格的捕撈禁忌</strong>：規定捕撈時段、漁具種類、飲食禁忌與女性禁區，這是達悟族對飛魚族群的<strong>傳統生態知識（TEK）</strong>——以文化規範實踐海洋資源的永續管理。整套祭儀體系透過祭詞（raod）世代口傳，規範人與飛魚之間的倫理關係。</div>
+            </div>
+            <div class="detail-divider"></div>
+            <div class="detail-row">
+              <div class="detail-key">TEK 關聯</div>
+              <div class="detail-val">季節性海洋生態管理、飛魚族群動態、祭詞（raod）語言學、捕撈禁忌與性別分工</div>
+            </div>
+            <div class="detail-row">
+              <div class="detail-key">dc:rights</div>
+              <div class="detail-val">CC BY-NC-ND 4.0 · 祭詞音檔依性別限制存取</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: soli -->
+      <div class="card" data-id="3" onclick="toggleCard(this)">
+        <div class="card-img">
+          <img src="Img/芋頭農耕系統.png" alt="芋頭農耕系統">
+        </div>
+        <div class="card-band" style="background:var(--crisis-urgent);"></div>
+        <div class="card-body">
+          <div class="card-name">芋頭農耕系統<span class="card-tao">（soli）</span></div>
+          <div class="card-meta">農耕知識</div>
+          <div class="card-identifier">dc:identifier &nbsp;NUTC-IM-2026-003</div>
+          <span class="card-crisis-badge" style="background:rgba(192,57,43,0.18);color:#ff8a7e;">
+            ● 傳承危機：緊急
+          </span>
+        </div>
+        <button class="card-toggle">展開詳情 ▾</button>
+        <div class="card-detail">
+          <div class="card-detail-inner">
+            <div class="detail-row">
+              <div class="detail-key">dc:title</div>
+              <div class="detail-val">達悟族芋頭旱田農耕知識體系（soli-kataw）</div>
+            </div>
+            <div class="detail-row">
+              <div class="detail-key">dc:description</div>
+              <div class="detail-val">達悟族擁有<strong>超過五十個芋頭品種</strong>，每個品種均有對應的<strong>達悟語名稱</strong>，記錄其食用特性、適種條件與儀式用途。旱田（yayo）的梯田灌排水系統配合山地地形精密設計，是氣候適應農業的典範。目前完整掌握品種知識與耕作語彙的耆老不足十人，大量品種面臨命名知識斷絕的危機。</div>
+            </div>
+            <div class="detail-divider"></div>
+            <div class="detail-row">
+              <div class="detail-key">TEK 關聯</div>
+              <div class="detail-val">農業生物多樣性、土壤分類命名、季風氣候知識、種子保育與品種選拔實踐</div>
+            </div>
+            <div class="detail-row">
+              <div class="detail-key">dc:rights</div>
+              <div class="detail-val">CC BY-NC-SA 4.0 · 開放研究合作申請</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4: vahay -->
+      <div class="card" data-id="4" onclick="toggleCard(this)">
+        <div class="card-img">
+          <img src="Img/傳統地下屋.png" alt="傳統地下屋">
+        </div>
+        <div class="card-band" style="background:var(--crisis-midhigh);"></div>
+        <div class="card-body">
+          <div class="card-name">傳統地下屋<span class="card-tao">（vahay）</span></div>
+          <div class="card-meta">傳統建築</div>
+          <div class="card-identifier">dc:identifier &nbsp;NUTC-IM-2026-004</div>
+          <span class="card-crisis-badge" style="background:rgba(239,159,39,0.18);color:#f4c76a;">
+            ● 傳承危機：中高
+          </span>
+        </div>
+        <button class="card-toggle">展開詳情 ▾</button>
+        <div class="card-detail">
+          <div class="card-detail-inner">
+            <div class="detail-row">
+              <div class="detail-key">dc:title</div>
+              <div class="detail-val">達悟族半地下式傳統住屋（vahay no tao）</div>
+            </div>
+            <div class="detail-row">
+              <div class="detail-key">dc:description</div>
+              <div class="detail-val">為適應蘭嶼颱風環境而設計的半地下屋，前庭涼台（tagakal）為家族社交空間。建築朝向、材料選擇與施工禁忌構成完整的空間哲學體系，現存傳統工匠不足五人。</div>
+            </div>
+            <div class="detail-divider"></div>
+            <div class="detail-row">
+              <div class="detail-key">TEK 關聯</div>
+              <div class="detail-val">氣候適應建築、材料生態學、風水（tata-tao）空間觀</div>
+            </div>
+            <div class="detail-row">
+              <div class="detail-key">dc:rights</div>
+              <div class="detail-val">CC BY-NC 4.0 · 3D 掃描資料開放教育使用</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5: walis / nagol -->
+      <div class="card" data-id="5" onclick="toggleCard(this)">
+        <div class="card-img">
+          <img src="Img/傳統服飾.png" alt="傳統服飾">
+        </div>
+        <div class="card-band" style="background:var(--crisis-mid);"></div>
+        <div class="card-body">
+          <div class="card-name">傳統服飾<span class="card-tao">（walis・nagol）</span></div>
+          <div class="card-meta">物質文化</div>
+          <div class="card-identifier">dc:identifier &nbsp;NUTC-IM-2026-005</div>
+          <span class="card-crisis-badge" style="background:rgba(99,153,34,0.18);color:#9fd45a;">
+            ● 傳承危機：中
+          </span>
+        </div>
+        <button class="card-toggle">展開詳情 ▾</button>
+        <div class="card-detail">
+          <div class="card-detail-inner">
+            <div class="detail-row">
+              <div class="detail-key">dc:title</div>
+              <div class="detail-val">達悟族傳統禮裝體系（walis 女裝 · nagol 丁字褲）</div>
+            </div>
+            <div class="detail-row">
+              <div class="detail-key">dc:description</div>
+              <div class="detail-val">以苧麻手織完成的傳統禮裝，白底藍紋的幾何圖案乘載家族記憶與身份標記。丁字褲（nagol）為男性禮儀服飾，其配戴規則對應不同的社會情境，紡織技術目前由少數女性長老持有。</div>
+            </div>
+            <div class="detail-divider"></div>
+            <div class="detail-row">
+              <div class="detail-key">TEK 關聯</div>
+              <div class="detail-val">植物纖維工藝、天然染料知識、紡織符號系統、禮儀規範</div>
+            </div>
+            <div class="detail-row">
+              <div class="detail-key">dc:rights</div>
+              <div class="detail-val">CC BY-NC-SA 4.0 · 圖紋使用需社群授權審查</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /cards-grid -->
+  </div>
+</div>
+
+<!-- RISK CHART -->
+<div class="risk-section" id="risk">
+  <div class="risk-inner">
+    <p class="story-label">傳承危機量表 · Heritage Risk Index</p>
+    <h2 style="font-family:'Noto Serif TC',serif;font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:var(--text-dark);letter-spacing:0.04em;margin-bottom:0.3rem;">知識斷層的緊迫程度</h2>
+    <p style="font-size:0.8rem;color:var(--text-light);margin-bottom:2rem;letter-spacing:0.04em;">懸停各長條可查看危機說明；點擊可跳至對應展品</p>
+
+    <div class="risk-legend">
+      <div class="legend-item"><div class="legend-dot" style="background:var(--crisis-urgent);"></div>緊急（P1）</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--crisis-high);"></div>高（P2）</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--crisis-midhigh);"></div>中高（P3）</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--crisis-mid);"></div>中（P4）</div>
+    </div>
+
+    <div class="risk-bars" id="riskBars">
+
+      <div class="risk-row" onclick="scrollToCard(1)" title="跳至拼板舟展品">
+        <div class="risk-label">拼板舟<em>tatala</em></div>
+        <div class="risk-track">
+          <div class="risk-fill" data-width="95" style="background:var(--crisis-urgent);">
+            <div class="risk-tooltip">師傅老齡化，技術斷層風險極高；現存造舟師約3人</div>
+          </div>
+        </div>
+        <div class="risk-pct urgent">緊急 P1</div>
+      </div>
+
+      <div class="risk-row" onclick="scrollToCard(3)" title="跳至芋頭展品">
+        <div class="risk-label">芋頭農耕<em>soli</em></div>
+        <div class="risk-track">
+          <div class="risk-fill" data-width="92" style="background:var(--crisis-urgent);">
+            <div class="risk-tooltip">品種名稱知識人不足10人；氣候變遷加速品種滅失</div>
+          </div>
+        </div>
+        <div class="risk-pct urgent">緊急 P1</div>
+      </div>
+
+      <div class="risk-row" onclick="scrollToCard(2)" title="跳至飛魚季展品">
+        <div class="risk-label">飛魚季儀式<em>alibangbang</em></div>
+        <div class="risk-track">
+          <div class="risk-fill" data-width="78" style="background:var(--crisis-high);">
+            <div class="risk-tooltip">完整祭詞傳承者減少；觀光化影響儀式完整性</div>
+          </div>
+        </div>
+        <div class="risk-pct high">高 P2</div>
+      </div>
+
+      <div class="risk-row" onclick="scrollToCard(4)" title="跳至地下屋展品">
+        <div class="risk-label">傳統地下屋<em>vahay</em></div>
+        <div class="risk-track">
+          <div class="risk-fill" data-width="62" style="background:var(--crisis-midhigh);">
+            <div class="risk-tooltip">現代建材替代傳統工法；傳統工匠不足5人</div>
+          </div>
+        </div>
+        <div class="risk-pct midhigh">中高 P3</div>
+      </div>
+
+      <div class="risk-row" onclick="scrollToCard(5)" title="跳至傳統服飾展品">
+        <div class="risk-label">傳統服飾<em>walis / nagol</em></div>
+        <div class="risk-track">
+          <div class="risk-fill" data-width="45" style="background:var(--crisis-mid);">
+            <div class="risk-tooltip">文化復振運動推動下有部分復甦；紡織技術仍稀少</div>
+          </div>
+        </div>
+        <div class="risk-pct mid">中 P4</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">海浪上的記憶</div>
+      <p class="footer-tagline">
+        達悟族傳統文化數位方舟<br>
+        Waves of Memory — Tao Cultural Digital Ark<br><br>
+        蘭嶼・臺東・臺灣<br>
+        Orchid Island, Taitung, Taiwan
+      </p>
+    </div>
+    <div>
+      <div class="footer-heading">典藏授權說明</div>
+      <p class="footer-text">
+        本典藏各展品依其文化敏感度採用不同 Creative Commons 授權條款（CC BY-NC-SA 4.0、CC BY-NC-ND 4.0、CC BY-NC 4.0）。<br><br>
+        部分知識內容遵照達悟族傳統知識保護協議（Traditional Knowledge Protocol），需經社群代表審查後方可引用或再製。<br><br>
+        任何商業使用或圖紋複製，請聯繫蘭嶼鄉文化教育基金會。
+      </p>
+    </div>
+    <div>
+      <div class="footer-heading">引用格式</div>
+      <p class="footer-text">
+        達悟族傳統文化數位方舟典藏計畫（2026）。<em>海浪上的記憶：達悟族傳統文化數位方舟</em>。臺東：國立臺灣史前文化博物館。<br><br>
+        Metadata 標準：Dublin Core Metadata Initiative（DCMI）v1.1<br>
+        TEK 分類：UNESCO 傳統知識數位圖書館框架（TKDL）<br><br>
+        <a href="#">聯繫典藏計畫</a> · <a href="#">授權申請</a> · <a href="#">社群守則</a>
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">
+      © 2026 達悟族傳統文化數位方舟典藏計畫 · 保留所有權利
+    </div>
+    <div style="display:flex;gap:0.6rem;flex-wrap:wrap;">
+      <span class="license-badge">CC BY-NC-SA 4.0</span>
+      <span class="license-badge">DC Metadata v1.1</span>
+      <span class="license-badge">TEK Protocol</span>
+    </div>
+  </div>
+</footer>
+
+<!-- 腳本引入 -->
+<script src="index.js"></script>
+
+</body>
+</html>

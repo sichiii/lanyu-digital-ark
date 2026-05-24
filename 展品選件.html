@@ -1,0 +1,212 @@
+<!-- CARDS -->
+<div class="cards-section" id="cards">
+  <div class="section-inner">
+    <p class="section-label">展品選件</p>
+    <h2 class="section-title">五件核心文化典藏</h2>
+    <p
+      style="
+        font-size: 0.8rem;
+        color: var(--stone);
+        margin-top: 0.3rem;
+        letter-spacing: 0.04em;
+      "
+    >
+      點擊各展品卡片可展開 DC Metadata 詳情與達悟語知識說明
+    </p>
+
+    <div class="cards-grid" id="cardsGrid">
+
+      <!-- Card 1: tatala -->
+      <div class="card" data-id="1" onclick="toggleCard(this)">
+        <div class="card-img">
+          <img src="Img/拼板舟.png" alt="拼板舟">
+        </div>
+        <div class="card-band" style="background:var(--crisis-urgent);"></div>
+        <div class="card-body">
+          <div class="card-name">拼板舟<span class="card-tao">（tatala）</span></div>
+          <div class="card-meta">海洋器物</div>
+          <div class="card-identifier">dc:identifier &nbsp;NUTC-IM-2026-001</div>
+          <span class="card-crisis-badge" style="background:rgba(192,57,43,0.18);color:#ff8a7e;">
+            ● 傳承危機：緊急
+          </span>
+        </div>
+        <button class="card-toggle" aria-label="展開詳情">展開詳情 ▾</button>
+        <div class="card-detail">
+          <div class="card-detail-inner">
+            <div class="detail-row">
+              <div class="detail-key">dc:title</div>
+              <div class="detail-val">拼板舟建造知識體系（tatala-araw）</div>
+            </div>
+            <div class="detail-row">
+              <div class="detail-key">dc:description</div>
+              <div class="detail-val">以 21 至 27 塊不同樹種的木板拼接而成，全程<strong>不使用任何釘子</strong>，僅靠木栓、藤條與精密榫接固定船體。每塊木板皆有達悟語專名，對應船體部位的結構功能與力學邏輯。建造過程融合星象曆法、海流判讀與季風知識，是家族男性協作完成的集體知識實踐，亦是傳承造海知識的核心儀式場域。</div>
+            </div>
+            <div class="detail-divider"></div>
+            <div class="detail-row">
+              <div class="detail-key">TEK 關聯</div>
+              <div class="detail-val">海洋生態曆法、木材識別與選材禁忌、星象導航、造船禁忌（manibon）</div>
+            </div>
+            <div class="detail-row">
+              <div class="detail-key">dc:rights</div>
+              <div class="detail-val">CC BY-NC-SA 4.0 · 部分建造細節依社群協議限制存取</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: alibangbang -->
+      <div class="card" data-id="2" onclick="toggleCard(this)">
+        <div class="card-img">
+          <img src="Img/飛魚季儀式.png" alt="飛魚季儀式">
+        </div>
+        <div class="card-band" style="background:var(--crisis-high);"></div>
+        <div class="card-body">
+          <div class="card-name">飛魚季儀式<span class="card-tao">（alibangbang）</span></div>
+          <div class="card-meta">歲時祭儀</div>
+          <div class="card-identifier">dc:identifier &nbsp;NUTC-IM-2026-002</div>
+          <span class="card-crisis-badge" style="background:rgba(232,115,74,0.18);color:#f2b08a;">
+            ● 傳承危機：高
+          </span>
+        </div>
+        <button class="card-toggle">展開詳情 ▾</button>
+        <div class="card-detail">
+          <div class="card-detail-inner">
+            <div class="detail-row">
+              <div class="detail-key">dc:title</div>
+              <div class="detail-val">飛魚季祭儀知識體系（alibangbang-anito）</div>
+            </div>
+            <div class="detail-row">
+              <div class="detail-key">dc:description</div>
+              <div class="detail-val">從每年二月的招魚祭（mivaci no rayon）起至八月終魚祭，飛魚季期間有一套<strong>嚴格的捕撈禁忌</strong>：規定捕撈時段、漁具種類、飲食禁忌與女性禁區，這是達悟族對飛魚族群的<strong>傳統生態知識（TEK）</strong>——以文化規範實踐海洋資源的永續管理。整套祭儀體系透過祭詞（raod）世代口傳，規範人與飛魚之間的倫理關係。</div>
+            </div>
+            <div class="detail-divider"></div>
+            <div class="detail-row">
+              <div class="detail-key">TEK 關聯</div>
+              <div class="detail-val">季節性海洋生態管理、飛魚族群動態、祭詞（raod）語言學、捕撈禁忌與性別分工</div>
+            </div>
+            <div class="detail-row">
+              <div class="detail-key">dc:rights</div>
+              <div class="detail-val">CC BY-NC-ND 4.0 · 祭詞音檔依性別限制存取</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: soli -->
+      <div class="card" data-id="3" onclick="toggleCard(this)">
+        <div class="card-img">
+          <img src="Img/芋頭農耕系統.png" alt="芋頭農耕系統">
+        </div>
+        <div class="card-band" style="background:var(--crisis-urgent);"></div>
+        <div class="card-body">
+          <div class="card-name">芋頭農耕系統<span class="card-tao">（soli）</span></div>
+          <div class="card-meta">農耕知識</div>
+          <div class="card-identifier">dc:identifier &nbsp;NUTC-IM-2026-003</div>
+          <span class="card-crisis-badge" style="background:rgba(192,57,43,0.18);color:#ff8a7e;">
+            ● 傳承危機：緊急
+          </span>
+        </div>
+        <button class="card-toggle">展開詳情 ▾</button>
+        <div class="card-detail">
+          <div class="card-detail-inner">
+            <div class="detail-row">
+              <div class="detail-key">dc:title</div>
+              <div class="detail-val">達悟族芋頭旱田農耕知識體系（soli-kataw）</div>
+            </div>
+            <div class="detail-row">
+              <div class="detail-key">dc:description</div>
+              <div class="detail-val">達悟族擁有<strong>超過五十個芋頭品種</strong>，每個品種均有對應的<strong>達悟語名稱</strong>，記錄其食用特性、適種條件與儀式用途。旱田（yayo）的梯田灌排水系統配合山地地形精密設計，是氣候適應農業的典範。目前完整掌握品種知識與耕作語彙的耆老不足十人，大量品種面臨命名知識斷絕的危機。</div>
+            </div>
+            <div class="detail-divider"></div>
+            <div class="detail-row">
+              <div class="detail-key">TEK 關聯</div>
+              <div class="detail-val">農業生物多樣性、土壤分類命名、季風氣候知識、種子保育與品種選拔實踐</div>
+            </div>
+            <div class="detail-row">
+              <div class="detail-key">dc:rights</div>
+              <div class="detail-val">CC BY-NC-SA 4.0 · 開放研究合作申請</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4: vahay -->
+      <div class="card" data-id="4" onclick="toggleCard(this)">
+        <div class="card-img">
+          <img src="Img/傳統地下屋.png" alt="傳統地下屋">
+        </div>
+        <div class="card-band" style="background:var(--crisis-midhigh);"></div>
+        <div class="card-body">
+          <div class="card-name">傳統地下屋<span class="card-tao">（vahay）</span></div>
+          <div class="card-meta">傳統建築</div>
+          <div class="card-identifier">dc:identifier &nbsp;NUTC-IM-2026-004</div>
+          <span class="card-crisis-badge" style="background:rgba(239,159,39,0.18);color:#f4c76a;">
+            ● 傳承危機：中高
+          </span>
+        </div>
+        <button class="card-toggle">展開詳情 ▾</button>
+        <div class="card-detail">
+          <div class="card-detail-inner">
+            <div class="detail-row">
+              <div class="detail-key">dc:title</div>
+              <div class="detail-val">達悟族半地下式傳統住屋（vahay no tao）</div>
+            </div>
+            <div class="detail-row">
+              <div class="detail-key">dc:description</div>
+              <div class="detail-val">為適應蘭嶼颱風環境而設計的半地下屋，前庭涼台（tagakal）為家族社交空間。建築朝向、材料選擇與施工禁忌構成完整的空間哲學體系，現存傳統工匠不足五人。</div>
+            </div>
+            <div class="detail-divider"></div>
+            <div class="detail-row">
+              <div class="detail-key">TEK 關聯</div>
+              <div class="detail-val">氣候適應建築、材料生態學、風水（tata-tao）空間觀</div>
+            </div>
+            <div class="detail-row">
+              <div class="detail-key">dc:rights</div>
+              <div class="detail-val">CC BY-NC 4.0 · 3D 掃描資料開放教育使用</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5: walis / nagol -->
+      <div class="card" data-id="5" onclick="toggleCard(this)">
+        <div class="card-img">
+          <img src="Img/傳統服飾.png" alt="傳統服飾">
+        </div>
+        <div class="card-band" style="background:var(--crisis-mid);"></div>
+        <div class="card-body">
+          <div class="card-name">傳統服飾<span class="card-tao">（walis・nagol）</span></div>
+          <div class="card-meta">物質文化</div>
+          <div class="card-identifier">dc:identifier &nbsp;NUTC-IM-2026-005</div>
+          <span class="card-crisis-badge" style="background:rgba(99,153,34,0.18);color:#9fd45a;">
+            ● 傳承危機：中
+          </span>
+        </div>
+        <button class="card-toggle">展開詳情 ▾</button>
+        <div class="card-detail">
+          <div class="card-detail-inner">
+            <div class="detail-row">
+              <div class="detail-key">dc:title</div>
+              <div class="detail-val">達悟族傳統禮裝體系（walis 女裝 · nagol 丁字褲）</div>
+            </div>
+            <div class="detail-row">
+              <div class="detail-key">dc:description</div>
+              <div class="detail-val">以苧麻手織完成的傳統禮裝，白底藍紋的幾何圖案乘載家族記憶與身份標記。丁字褲（nagol）為男性禮儀服飾，其配戴規則對應不同的社會情境，紡織技術目前由少數女性長老持有。</div>
+            </div>
+            <div class="detail-divider"></div>
+            <div class="detail-row">
+              <div class="detail-key">TEK 關聯</div>
+              <div class="detail-val">植物纖維工藝、天然染料知識、紡織符號系統、禮儀規範</div>
+            </div>
+            <div class="detail-row">
+              <div class="detail-key">dc:rights</div>
+              <div class="detail-val">CC BY-NC-SA 4.0 · 圖紋使用需社群授權審查</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- /cards-grid -->
+  </div>
+</div>
